@@ -139,16 +139,25 @@ VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_
 
     $resulto = mysqli_query($conn, $sqlo);
 
+    $sqlr = "INSERT INTO dd (invest) values ($invest);";
+    $resultchoo = mysqli_query($conn,$sqlr);
     $_SESSION['process'] = 'true';
     //if($_SESSION['day'] == $t_span) {
     //     header('Location: http://pratik.acslab.org/end.php'); die();
     //}
 
+    $a = 0.2;
+
     if (isset($_SESSION['nbr_pay'])) {
-        $sqlnbr = "SELECT pay FROM nbr_pay WHERE day=" . $_SESSION['day'] . ";";
+        $sqlnbr = "SELECT invest FROM dd WHERE day=" . $_SESSION['day'] . ";";
+        $qavg = "SELECT avg(invest) from dd;";
+        $result_avg = mysqli_query($conn, $qavg);
         $resultnbr = mysqli_query($conn, $sqlnbr);
         $rownbr = mysqli_fetch_array($resultnbr, MYSQLI_ASSOC);
-        $_SESSION['nbr_pay'] = $rownbr["pay"];
+        $avg = mysqli_fetch_array($result_avg, MYSQLI_ASSOC);
+        $x = $rownbr['investment'];
+        $y = $avg['avg(invest)'];
+        $_SESSION['nbr_pay'] = $a*$x + (1-$a)*$y;
     }
 
     if ($landslide == 1) {
