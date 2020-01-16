@@ -1,0 +1,102 @@
+body { font-family:"Arial", Arial, serif; }
+
+p {
+  width: 825px;  
+  font-size: 10pt;
+  text-align: left;
+}
+
+.matrix {
+    font-size: 16pt;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.nostyle {
+    border: none;
+}
+
+.results {
+    font-size: 12pt;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.csvoselected {
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+td:first-child {
+    border-right: 1px solid black;
+}
+
+tr:first-child {
+    border-bottom: 1px solid black;
+}
+
+.nesttable td:first-child {
+    border-right: none;
+}
+.nesttable tr:first-child {
+    border-bottom: none;
+}
+
+.matrix td {
+    width: 80px;
+    text-align: center;
+}
+
+.bigtbl_rndnr {
+    color: lightgray;
+    text-align: right;
+}
+
+.bigtbl_chc {
+    width: 30px;
+}
+
+.svotbl {
+    padding: 25px;
+    border: 1px solid lightgray;
+}
+
+.clickme {
+    display: inline-block;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+    font-size: 20pt;
+    background-color: #F8F8F8;
+    cursor: pointer; cursor: hand;
+}
+
+.clickme:hover {
+    background-color: lightgray;   
+}
+
+.button {
+     
+    /*Step 2: Basic Button Styles*/
+    display: block;
+    height: 100px;
+    width: 190px;
+    background: #D6D5D5;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+     
+    /*Step 3: Text Styles*/
+    color: rgba(0, 0, 0, 0.55);
+    text-align: center;
+    font: bold 1.5em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+ 
+/*Step 3: Link Styling*/
+a.button {
+    text-decoration: none;
+}
+
+a:link {color:black;text-decoration:none;}      /* unvisited link */
+a:visited {color:black;;text-decoration:none;}  /* visited link */
+a:hover {color:black;text-decoration:underline;background: #9F9F9F;}  /* mouse over link */
+a:active {color:black;;text-decoration:none;}  /* selected link */
