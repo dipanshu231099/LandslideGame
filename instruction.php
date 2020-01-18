@@ -247,6 +247,7 @@ VALUES ('$rand_spatial','$consent','$unqid','0','$winv','$dinc','$mini','$ret','
                                                                                             echo $a; ?></strong>% of your property wealth.</p>
                     <p><strong>Please note that your goal in this task is to maximize your total wealth across investments over a number of days.</strong></p>
                     <p><strong>Best of Luck!</strong></p>
+                    <a href="game.php"><button type="button" class="btn btn-primary btn-lg" style="position:relative;left:50%">PLAY</button></a>
                 </div>
             </div>
             <?php include 'footer.php';
