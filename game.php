@@ -26,6 +26,8 @@ elseif(!isset($_SESSION["connect"])) {
 
 <?php   }
 else {
+if(!isset($_SESSION["version"])){$_SESSION["version"] = $_POST["version"];}
+echo "<script>console.log('". $_SESSION["version"] ."')</script>";
 $unqid = $_SESSION["uid"];
 $cryptid = $_SESSION["cid"];
     if($_SESSION['day'] == 0)

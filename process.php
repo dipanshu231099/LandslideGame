@@ -73,8 +73,9 @@ if (!isset($_SESSION['uid'])) {
     $p_rain = $_SESSION['p_rain'];
 
     $p_investment = $_SESSION['p_invest'];
-    $p_investment = 1 - $M * $cumulative_invest / $income_unaffected_cumulative;
+    $p_investment = 1 - $M * (($cumulative_invest+$_SESSION['nbr_pay']) / (2*$income_unaffected_cumulative));
     $_SESSION['p_invest'] = $p_investment;
+
     $p_landslide = $p_rain * (1 - $w_i) + $p_investment * ($w_i);
     $_SESSION['p_landslide'] = $p_landslide;
     $landslide_threshold = round(mt_rand() / mt_getrandmax(), 5);;
@@ -146,16 +147,18 @@ VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_
     //     header('Location: http://pratik.acslab.org/end.php'); die();
     //}
 
-    $a = 0.2;
+    if($_SESSION['version']=='v1'){$a = 0.2;}
+    else if($_SESSION['version']=='v2'){$a = 0.5;}
+    else {$a = 0.8;}
 
     if (isset($_SESSION['nbr_pay'])) {
-        $sqlnbr = "SELECT invest FROM dd WHERE day=" . $_SESSION['day'] . ";";
+        $sqlnbr = "SELECT * FROM dd WHERE day=" . $_SESSION['day'] . ";";
         $qavg = "SELECT avg(invest) from dd;";
         $result_avg = mysqli_query($conn, $qavg);
         $resultnbr = mysqli_query($conn, $sqlnbr);
         $rownbr = mysqli_fetch_array($resultnbr, MYSQLI_ASSOC);
         $avg = mysqli_fetch_array($result_avg, MYSQLI_ASSOC);
-        $x = $rownbr['investment'];
+        $x = $rownbr['invest'];
         $y = $avg['avg(invest)'];
         $_SESSION['nbr_pay'] = $a*$x + (1-$a)*$y;
     }
