@@ -73,7 +73,7 @@ if (!isset($_SESSION['uid'])) {
     $p_rain = $_SESSION['p_rain'];
 
     $p_investment = $_SESSION['p_invest'];
-    $p_investment = 1 - $M * (($cumulative_invest+$_SESSION['nbr_pay']) / (2*$income_unaffected_cumulative));
+    $p_investment = 1 - $M * (($cumulative_invest + $_SESSION['nbr_pay']) / (2 * $income_unaffected_cumulative));
     $_SESSION['p_invest'] = $p_investment;
 
     $p_landslide = $p_rain * (1 - $w_i) + $p_investment * ($w_i);
@@ -134,22 +134,29 @@ if (!isset($_SESSION['uid'])) {
     $_SESSION['message_injury'] = $damage_injury;
     $_SESSION['dmg_property'] = $damage;
 
+    if ($_SESSION['version'] == 1) {
+        $a = 0.2;
+        $game = "game1";
+    } else if ($_SESSION['version'] == 2) {
+        $game = "game2";
+        $a = 0.5;
+    } else {
+        $game = "game3";
+        $a = 0.8;
+    }
 
-    $sqlo = "INSERT INTO game (consent, id, day, invest, cumulative_invest, weight_invest, daily_income, rand_property, rand_fatality, rand_injury, p_temporal, p_spatial, p_rain, p_investment, p_landslide, landslide_threshold, landslide, damage_property, damage_fatality, damage_injury, damage, net_money, final_money, return_mitigation, money_ini, time_span, dampening_factor_investment, wealth_property, p_property, p_fatality, p_injury, injury_daily_inc_loss, fatality_daily_inc_loss, day_initial_temporal)
+    $sqlo = "INSERT INTO $game (consent, id, day, invest, cumulative_invest, weight_invest, daily_income, rand_property, rand_fatality, rand_injury, p_temporal, p_spatial, p_rain, p_investment, p_landslide, landslide_threshold, landslide, damage_property, damage_fatality, damage_injury, damage, net_money, final_money, return_mitigation, money_ini, time_span, dampening_factor_investment, wealth_property, p_property, p_fatality, p_injury, injury_daily_inc_loss, fatality_daily_inc_loss, day_initial_temporal)
 VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_income','$rand_property','$rand_fatality','$rand_injury','$p_temporal','$p_spatial','$p_rain','$p_investment','$p_landslide','$landslide_threshold','$landslide','$damage_property','$damage_fatality','$damage_injury','$damage','$net_money','$final_money','$M','$money_ini','$t_span','$d_f_inv','$wealth_property','$p_property','$p_fatality','$p_injury','$inj_loss','$fat_loss','$d_i_t')";
 
     $resulto = mysqli_query($conn, $sqlo);
 
     $sqlr = "INSERT INTO dd (invest) values ($invest);";
-    $resultchoo = mysqli_query($conn,$sqlr);
+    $resultchoo = mysqli_query($conn, $sqlr);
     $_SESSION['process'] = 'true';
     //if($_SESSION['day'] == $t_span) {
     //     header('Location: http://pratik.acslab.org/end.php'); die();
     //}
 
-    if($_SESSION['version']=='v1'){$a = 0.2;}
-    else if($_SESSION['version']=='v2'){$a = 0.5;}
-    else {$a = 0.8;}
 
     if (isset($_SESSION['nbr_pay'])) {
         $sqlnbr = "SELECT * FROM dd WHERE day=" . $_SESSION['day'] . ";";
@@ -160,7 +167,7 @@ VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_
         $avg = mysqli_fetch_array($result_avg, MYSQLI_ASSOC);
         $x = $rownbr['invest'];
         $y = $avg['avg(invest)'];
-        $_SESSION['nbr_pay'] = $a*$x + (1-$a)*$y;
+        $_SESSION['nbr_pay'] = $a * $x + (1 - $a) * $y;
     }
 
     if ($landslide == 1) {

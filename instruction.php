@@ -247,15 +247,11 @@ VALUES ('$rand_spatial','$consent','$unqid','0','$winv','$dinc','$mini','$ret','
                                                                                             echo $a; ?></strong>% of your property wealth.</p>
                     <p><strong>Please note that your goal in this task is to maximize your total wealth across investments over a number of days.</strong></p>
                     <p><strong>Best of Luck!</strong></p>
-                    <form method="POST" action="game.php">
-                    <input type="radio" name="version" value="v1" checked> v1<br>
-                    <input type="radio" name="version" value="v2"> v2<br>
-                    <input type="radio" name="version" value="v3"> v3
-                    <button type="submit" class="btn btn-primary btn-lg" style="position:relative;left:50%">PLAY</button>
-                    </form>
                 </div>
             </div>
-            <?php include 'footer.php'; ?>
+            <?php include 'footer.php';
+             $_SESSION['version'] = rand(1,3);
+            ?>
         </body>
 
         </html>
