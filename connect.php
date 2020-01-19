@@ -16,7 +16,7 @@ else {
 $unqid = $_SESSION["uid"];
 $cryptid = $_SESSION["cid"];
 //$conn = new mysqli("localhost", "acs_akshit", "acslab","u978805288_u978805288_acs_draft");
- $conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
+ $conn = new mysqli("localhost", "u978805288_user", "password","u978805288_acs_draft");
 
 if ($conn->connect_error) {
     echo "<br><a href='index2.php'>Please try again</a> ";die("Connection failed!");

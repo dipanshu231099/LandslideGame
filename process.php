@@ -33,7 +33,7 @@ if (!isset($_SESSION['uid'])) {
     $day = $_SESSION['day'];
     $unqid = $_SESSION['uid'];
     $consent = $_SESSION['consent'];
-    $conn = new mysqli("localhost", "user", "password", "u978805288_acs_draft");
+    $conn = new mysqli("localhost", "u978805288_user", "password", "u978805288_acs_draft");
 
     //inputs
 

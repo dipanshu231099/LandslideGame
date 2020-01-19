@@ -3,14 +3,14 @@ session_start();
 
 if(!isset($_SESSION['uid'])) {
 
-header('Location: http://pratik.acslab.org/index.php');
+header('Location: index.php');
 session_destroy();
    die();
                               
 }
 $uid = $_SESSION['uid'];
 $t_span = $_SESSION['time_span']; 
-$conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
+$conn = new mysqli("localhost", "u978805288_user", "password","u978805288_acs_draft");
 $sql = "SELECT * FROM game WHERE id='".$uid."' AND day=".$t_span.";";
 if(mysqli_query($conn,$sql)) {
 

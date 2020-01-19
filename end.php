@@ -2,7 +2,7 @@
 session_start();error_reporting(0);
 if(!isset($_SESSION['uid'])) {
 
-header('Location: http://pratik.acslab.org/index.php');
+header('Location: index.php');
 session_destroy();
    die();
                               
@@ -64,7 +64,7 @@ session_destroy();
                         <th>Total income not invested in landslides (NTM)</th>
                         <th><?php if($_SESSION['day'] == 1) {echo round ($_SESSION['daily_income'],1);}
  else {$unqid = $_SESSION['uid']; $ntm = 0;
-$conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
+$conn = new mysqli("localhost", "u978805288_user", "password","u978805288_acs_draft");
 $sqlntm = "SELECT daily_income-invest from game where id='$unqid' AND day >0;";
 if ($resultntm = mysqli_query($conn, $sqlntm)) {
     while ($rowntm = mysqli_fetch_array($resultntm, MYSQLI_NUM)) {
