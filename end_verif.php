@@ -10,7 +10,7 @@ session_destroy();
 }
 $uid = $_SESSION['uid'];
 $t_span = $_SESSION['time_span']; 
-$conn = new mysqli("localhost", "acs_de_gam", "acslab","acs_draft");
+$conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
 $sql = "SELECT * FROM game WHERE id='".$uid."' AND day=".$t_span.";";
 if(mysqli_query($conn,$sql)) {
 

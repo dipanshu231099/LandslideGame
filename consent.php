@@ -1,7 +1,7 @@
 <?php
     session_start();
     error_reporting(0);
-    $conn = new mysqli("localhost", "user", "password","acs_draft");
+    $conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
     $sqlsno = "SELECT scenario_id FROM param";
     $result = mysqli_query($conn,$sqlsno);
     $row = mysqli_fetch_array($result,MYSQLI_NUM);

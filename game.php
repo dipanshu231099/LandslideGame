@@ -35,7 +35,7 @@ $cryptid = $_SESSION["cid"];
     $_SESSION['process'] = 'false';
     $day = $_SESSION['day'];
     $day_temporal = $day + $_SESSION['day_initial_temporal'] - 1;
-     $conn = new mysqli("localhost", "user", "password","acs_draft");
+     $conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
  $sqlinp = "SELECT p_temporal FROM reference WHERE day='$day_temporal'";
 $resulti = mysqli_query($conn,$sqlinp);
 $tempo=mysqli_fetch_array($resulti,MYSQLI_ASSOC);
@@ -101,7 +101,7 @@ Therefore, this game presents people the right information that must be known to
             <!--    messages--><div class="row">
             <div class="col-md-8"><div class="jumbotron">
                 <div class="row">
-                    <!-- day wise message -->
+                    <!-- month wise message -->
       <?php 
     $day_alert = $_SESSION['day'];
     $scenario_id = $_SESSION['scenario_id'];
@@ -141,7 +141,7 @@ $_SESSION['p_landslide_array'][0] = round($_SESSION['p_landslide_array'][0],2);
                 <form role="form" id="form2" name="form2" method="post" onsubmit='return check()' action="process.php?id=<?php echo $cryptid; ?>&decision=true">
                 <div class="form-group">
                 <div class=container1>    
-                <label><h3>Your Investment for landslides for day <?php echo $_SESSION['day'];?> (between 0.0 and <?php $abd = floor($_SESSION['daily_income'] * 10)/10 ; echo $abd; ?>):</h3></label>
+                <label><h3>Your Investment for landslides for month <?php echo $_SESSION['day'];?> (between 0.0 and <?php $abd = floor($_SESSION['daily_income'] * 10)/10 ; echo $abd; ?>):</h3></label>
                 <input type="number" class="form-control" id="invest" name="invest" step="0.1"  min=0.0 max=<?php echo $abd; ?> required> <?php echo 'For no investment, please enter 0.0' ;?>
                     </div></div>
                 <div class="form-group">
@@ -186,16 +186,16 @@ $_SESSION['p_landslide_array'][0] = round($_SESSION['p_landslide_array'][0],2);
                         </tr>
                     </thead>
                     <tr class="info">
-                        <th>Day</th>
+                        <th>month</th>
                         <th><?php echo $_SESSION['day'] ; ?></th>
                     </tr>
                     <tr class="info">
-                        <th>Income available for investment today (M)</th>
+                        <th>Income available for investment tomonth (M)</th>
                         <th><?php $income = floor($_SESSION['daily_income'] * 10) / 10 ; echo $income;
                             ?></th>
                     </tr>
          <!--          <tr class="info">
-                        <th>Yesterday's investment (Y)</th>
+                        <th>Yestermonth's investment (Y)</th>
                         <th><?php// if($_SESSION['day'] == 1) {echo '-';} //else //{echo round($_SESSION['invest'],1)//;} ?></th>
 </tr>-->
                     <!--<tr class="info">
@@ -307,7 +307,7 @@ $_SESSION['p_landslide_array'][0] = round($_SESSION['p_landslide_array'][0],2);
             text: 'Property wealth'
         },
         xAxis: {
-            title: 'Day',
+            title: 'month',
             categories: <?php echo json_encode($_SESSION['daychart']); ?>
         },
         yAxis: {
@@ -372,7 +372,7 @@ $_SESSION['p_landslide_array'][0] = round($_SESSION['p_landslide_array'][0],2);
             text: 'Total probability of landslide'
         },
         xAxis: {
-            title: 'Day',
+            title: 'month',
             categories: <?php echo json_encode($_SESSION['daychart']); ?>
         },
         yAxis: {
@@ -403,7 +403,7 @@ $_SESSION['p_landslide_array'][0] = round($_SESSION['p_landslide_array'][0],2);
             text: 'Total income not invested in landslides'
         },
         xAxis: {
-            title: 'Day',
+            title: 'month',
             categories: <?php echo json_encode($_SESSION['daychart']); ?>
         },
         yAxis: {

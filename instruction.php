@@ -101,7 +101,7 @@ if (!isset($_SESSION['uid']) || $_SESSION['consent'] != 'true') {
     }
     $unqid = $_SESSION['uid'];
     $_SESSION['name'] = 'Guest';
-    $conn = new mysqli("localhost", "user", "password", "acs_draft");
+    $conn = new mysqli("localhost", "user", "password", "u978805288_acs_draft");
     $sql = "INSERT INTO demographic (id, Age, Gender, Education, Occupation, Major, Email, city_belong_to, liveno_currently_live, live_long, livereason, dwell_type, household_size, owner, source_of_income, income, knowledge) 
 VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live','$live_long','$livereason','$dwell','$household','$owner','$source','$income','$know')";
     if ($conn->query($sql) === TRUE) {

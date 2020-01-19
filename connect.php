@@ -15,8 +15,8 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 else {
 $unqid = $_SESSION["uid"];
 $cryptid = $_SESSION["cid"];
-//$conn = new mysqli("localhost", "acs_akshit", "acslab","acs_draft");
- $conn = new mysqli("localhost", "user", "password","acs_draft");
+//$conn = new mysqli("localhost", "acs_akshit", "acslab","u978805288_u978805288_acs_draft");
+ $conn = new mysqli("localhost", "user", "password","u978805288_acs_draft");
 
 if ($conn->connect_error) {
     echo "<br><a href='index2.php'>Please try again</a> ";die("Connection failed!");
