@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="jumbotron">
-                <h2 class="text-center"><i class="fa fa-exclamation-triangle"></i> Landslide Occurred!  /*<?php echo  $_SESSION['scenario_id']; ?>*/</h2>
+                <h2 class="text-center"><i class="fa fa-exclamation-triangle"></i> Landslide Occurred!  /*<?php echo  $_SESSION['version']; ?>*/</h2>
                 <!--SAD MESSAGE START -->
                 <br><br>
                 <p>You made <strong><?php echo  $_SESSION['invest'];?></strong> investment.</p>
@@ -49,7 +49,7 @@ echo "<p>Thus, your property wealth was not affected and stays at the same value
                 <div class="row">
                 <?php
                 //code for images to be displayed
- $conn1 = new mysqli("localhost", "root", "","u978805288_acs_draft");
+ $conn1 = new mysqli("localhost", "user", "password","u978805288_acs_draft");
 $scenario_id = $_SESSION['scenario_id'];
 if($_SESSION['message_fatality']) {
 $sqldth = "SELECT image_source FROM death_images WHERE scenario_id='$scenario_id'";

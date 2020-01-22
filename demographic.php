@@ -74,12 +74,12 @@ else {
     <?php $_SESSION['name'] = 'Guest';?>
     <div class="form-group containerx">
         <label>Age:</label>
-        <input type="number" class="form-control" id="age" name="age" max=100 min=<?php echo $_SESSION['age_restriction'];?> required>
+        <input type="number" class="form-control" value="18" id="age" name="age" max=100 min=<?php echo $_SESSION['age_restriction'];?> required>
     </div>
     <div class="form-group">
         <label>Gender:</label>
     <div class="radio">
-        <label><input type="radio" name="gender" value="M" required>Male</label>
+        <label><input type="radio" name="gender" value="M" checked="checked" required>Male</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="gender" value="F">Female</label>
@@ -89,7 +89,7 @@ else {
     <div class="form-group">
         <label>Highest education level attained:</label>
     <div class="radio">
-        <label><input type="radio" name="ed" value="High_School" required>High School</label>
+        <label><input type="radio" name="ed" value="High_School" checked="checked" required>High School</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="ed" value="Intermediate">Intermediate</label>
@@ -110,28 +110,28 @@ else {
 
     <div class="form-group">
         <label>Major / Specialization:</label>
-        <input type="text" class="form-control" id="major" name="major" required>
+        <input type="text" class="form-control" id="major" name="major" value="type here" required>
     </div>
 
     <div class="form-group">
         <label>Occupation (If retired, state Retired and specify former occupation):</label>
-        <input type="text" class="form-control" id="occ" name="occ" required>
+        <input type="text" class="form-control" id="occ" name="occ" value="type here" required>
         </div>
 
     <div class="form-group">
         <label>E-Mail ID (strictly for payment purposes):</label><br>
-        <input id='email' type="email" class="form-control" name="email" required>
+        <input id='email' type="email" class="form-control" name="email" value="example@example">
     </div>
 
         <div class="form-group">
         <label>The city/town to which you belong to:</label>
-        <input type="text" class="form-control" id="city" name="city" required>
+        <input type="text" class="form-control" id="city" name="city" value="type here" required>
     </div>
        
 <div class="form-group">
         <label>Do you currently live at the city/town where you belong to? </label>
     <div class="radio">
-        <label><input type="radio" name="live" value="yes" required>Yes</label>
+        <label><input type="radio" name="live" checked="checked" value="yes" required>Yes</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="live" value="no">No</label>
@@ -146,7 +146,7 @@ else {
 <div class="form-group">
         <label>How long have you lived in city/town where you currently reside?</label>
     <div class="radio">
-        <label><input type="radio" name="livelong" value="Less than one year" required>Less than one year</label>
+        <label><input type="radio" name="livelong" checked="checked" value="Less than one year" required>Less than one year</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="livelong" value="1-5 Years">1-5 Years</label>
@@ -191,7 +191,7 @@ else {
 <div class="form-group">
         <label>Type of dwelling for your household: </label>
     <div class="radio">
-        <label><input type="radio" name="dwell" value="Informal Building" required>Informal Building (e.g. Wood and wattle walls, grass thatched roof)</label>
+        <label><input type="radio" name="dwell" checked="checked" value="Informal Building" required>Informal Building (e.g. Wood and wattle walls, grass thatched roof)</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="dwell" value="Formal Building">Formal Building (e.g. Brick walls, tiles/iron sheet roof)</label>
@@ -209,7 +209,7 @@ else {
 <div class="form-group">
         <label>Your household size:</label>
     <div class="radio">
-        <label><input type="radio" name="household" value="1 member only" required>1 member only</label>
+        <label><input type="radio" name="household" checked="checked" value="1 member only" required>1 member only</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="household" value="1-3 members">1-3 members</label>
@@ -247,7 +247,7 @@ else {
 <div class="form-group">
         <label>What is your major source of income for the household?</label>
     <div class="radio">
-        <label><input type="radio" name="source" value="Homemaker" required>Homemaker</label>
+        <label><input type="radio" name="source" checked="checked" value="Homemaker" required>Homemaker</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="source" value="Business (e.g., Shop)">Business (e.g., Shop)</label>
@@ -271,7 +271,7 @@ else {
 <div class="form-group">
         <label>What is the approximate range of the household income in INR per month? (This information will be kept confidential and it will be used strictly for research purposes)</label>
 <div class="radio">
-        <label><input type="radio" name="income" value="less than 5,000" required>less than 5,000</label>
+        <label><input type="radio" name="income" checked="checked" value="less than 5,000" required>less than 5,000</label>
     </div>
 <div class="radio">
         <label><input type="radio" name="income" value="5,000 - 25,000">5,000 - 25,000</label>
@@ -305,7 +305,7 @@ else {
     </div>
 
 <div class="radio">
-        <label><input type="radio" name="know" value="Basic understanding">Basic understanding</label>
+        <label><input type="radio" name="know" checked="checked" value="Basic understanding">Basic understanding</label>
     </div>
 <div class="radio">
         <label><input type="radio" name="know" value="Knowledgeable">Knowledgeable</label>

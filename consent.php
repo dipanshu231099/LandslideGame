@@ -188,7 +188,7 @@ Therefore, this game presents people the right information that must be known to
 <div class="form-group">
         <label>I am <?php echo $sno_arr[0] ;?> years or older.</label>
    
-        <label class="radio-inline"><input type="radio" name="cq1" value="1" required> Yes</label>
+        <label class="radio-inline"><input type="radio" checked="checked" name="cq1" value="1" required> Yes</label>
    
         <label class="radio-inline"><input type="radio" name="cq1" value="0"> No</label>
     
@@ -196,7 +196,7 @@ Therefore, this game presents people the right information that must be known to
 <div class="form-group">
         <label>I have read and understand the information provided completely.</label>
    
-        <label class="radio-inline"><input type="radio" name="cq2" value="1" required> Yes</label>
+        <label class="radio-inline"><input type="radio" checked="checked" name="cq2" value="1" required> Yes</label>
    
     
         <label class="radio-inline"><input type="radio" name="cq2" value="0"> No</label>
@@ -205,7 +205,7 @@ Therefore, this game presents people the right information that must be known to
 <div class="form-group">
         <label>I want to participate in this research and continue with the study.</label>
     
-        <label class="radio-inline"><input type="radio" name="cq3" value="1" required> Yes</label>
+        <label class="radio-inline"><input type="radio" checked="checked" name="cq3" value="1" required> Yes</label>
     
     
         <label class="radio-inline"><input type="radio" name="cq3" value="0"> No</label>

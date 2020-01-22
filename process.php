@@ -1,5 +1,8 @@
 <?php
 
+ini_set("display_errors", "1");
+error_reporting(E_ALL);
+
 session_start();
 error_reporting(0);
 
@@ -66,6 +69,7 @@ if (!isset($_SESSION['uid'])) {
     $rand_property = round(mt_rand() / mt_getrandmax(), 5);
     $rand_fatality = round(mt_rand() / mt_getrandmax(), 5);
     $rand_injury = round(mt_rand() / mt_getrandmax(), 5);
+    $rand_spatial = round(mt_rand() / mt_getrandmax(), 5);
     $p_temporal = $_SESSION['p_temporal'];
 
     $p_spatial = $_SESSION['p_spatial'];
@@ -145,12 +149,11 @@ if (!isset($_SESSION['uid'])) {
         $a = 0.8;
     }
 
-    $sqlo = "INSERT INTO $game (consent, id, day, invest, cumulative_invest, weight_invest, daily_income, rand_property, rand_fatality, rand_injury, p_temporal, p_spatial, p_rain, p_investment, p_landslide, landslide_threshold, landslide, damage_property, damage_fatality, damage_injury, damage, net_money, final_money, return_mitigation, money_ini, time_span, dampening_factor_investment, wealth_property, p_property, p_fatality, p_injury, injury_daily_inc_loss, fatality_daily_inc_loss, day_initial_temporal)
-VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_income','$rand_property','$rand_fatality','$rand_injury','$p_temporal','$p_spatial','$p_rain','$p_investment','$p_landslide','$landslide_threshold','$landslide','$damage_property','$damage_fatality','$damage_injury','$damage','$net_money','$final_money','$M','$money_ini','$t_span','$d_f_inv','$wealth_property','$p_property','$p_fatality','$p_injury','$inj_loss','$fat_loss','$d_i_t')";
+    
 
-    $resulto = mysqli_query($conn, $sqlo);
+    
 
-    $sqlr = "INSERT INTO dd (invest) values ($invest);";
+    $sqlr = "INSERT INTO dd (invest) values ('$invest');";
     $resultchoo = mysqli_query($conn, $sqlr);
     $_SESSION['process'] = 'true';
     //if($_SESSION['day'] == $t_span) {
@@ -167,7 +170,16 @@ VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_
         $avg = mysqli_fetch_array($result_avg, MYSQLI_ASSOC);
         $x = $rownbr['invest'];
         $y = $avg['avg(invest)'];
-        $_SESSION['nbr_pay'] = $a * $x + (1 - $a) * $y;
+        $_SESSION['nbr_pay'] = round($a * $x + (1 - $a) * $y,0);
+        $friend_invest = $_SESSION['nbr_pay'];
+    }
+
+    $sqlo = "INSERT INTO $game (consent, id, day, invest, cumulative_invest, weight_invest, daily_income, rand_property, rand_fatality, rand_injury, p_temporal, p_spatial, p_rain, p_investment, p_landslide, landslide_threshold, landslide, damage_property, damage_fatality, damage_injury, damage, net_money, final_money, return_mitigation, money_ini, time_span, dampening_factor_investment, wealth_property, p_property, p_fatality, p_injury, injury_daily_inc_loss, fatality_daily_inc_loss, day_initial_temporal,friend_invest, verr) VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_income','$rand_property','$rand_fatality','$rand_injury','$p_temporal','$p_spatial','$p_rain','$p_investment','$p_landslide','$landslide_threshold','$landslide','$damage_property','$damage_fatality','$damage_injury','$damage','$net_money','$final_money','$M','$money_ini','$t_span','$d_f_inv','$wealth_property','$p_property','$p_fatality','$p_injury','$inj_loss','$fat_loss','$d_i_t','$friend_invest','$a');";
+
+    $resulto = mysqli_query($conn, $sqlo);
+
+    if(!$resulto){
+        die("INSERT INTO $game (consent, id, day, invest, cumulative_invest, weight_invest, daily_income, rand_property, rand_fatality, rand_injury, p_temporal, p_spatial, p_rain, p_investment, p_landslide, landslide_threshold, landslide, damage_property, damage_fatality, damage_injury, damage, net_money, final_money, return_mitigation, money_ini, time_span, dampening_factor_investment, wealth_property, p_property, p_fatality, p_injury, injury_daily_inc_loss, fatality_daily_inc_loss, day_initial_temporal,friend_invest, verr, rand_spatial) VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_income','$rand_property','$rand_fatality','$rand_injury','$p_temporal','$p_spatial','$p_rain','$p_investment','$p_landslide','$landslide_threshold','$landslide','$damage_property','$damage_fatality','$damage_injury','$damage','$net_money','$final_money','$M','$money_ini','$t_span','$d_f_inv','$wealth_property','$p_property','$p_fatality','$p_injury','$inj_loss','$fat_loss','$d_i_t','$friend_invest','$a','$rand_spatial');");
     }
 
     if ($landslide == 1) {
@@ -179,6 +191,8 @@ VALUES('$consent','$unqid','$day','$invest','$cumulative_invest','$w_i','$daily_
         header('Location: landslide_negative.php');
         die();
     }
+
+    
 
     mysqli_close($conn);
 }
