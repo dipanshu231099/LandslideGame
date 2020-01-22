@@ -49,7 +49,7 @@ echo "<p>Thus, your property wealth was not affected and stays at the same value
                 <div class="row">
                 <?php
                 //code for images to be displayed
- $conn1 = new mysqli("localhost", "root", "","acs_draft");
+ $conn1 = new mysqli("localhost", "root", "","u978805288_acs_draft");
 $scenario_id = $_SESSION['scenario_id'];
 if($_SESSION['message_fatality']) {
 $sqldth = "SELECT image_source FROM death_images WHERE scenario_id='$scenario_id'";

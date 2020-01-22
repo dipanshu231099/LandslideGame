@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    $conn = new mysqli('localhost','user','password','acs_draft');
+    $conn = new mysqli('localhost','user','password','u978805288_acs_draft');
     $q1 = "DROP TABLE IF EXISTS dd;";
     $q2 = "CREATE TABLE dd (
         day int(11) primary key auto_increment,
