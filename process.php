@@ -162,15 +162,14 @@ if (!isset($_SESSION['uid'])) {
 
 
     if (isset($_SESSION['nbr_pay'])) {
-        $sqlnbr = "SELECT * FROM dd WHERE day=" . $_SESSION['day'] . ";";
-        $qavg = "SELECT avg(invest) from dd;";
+        // $sqlnbr = "SELECT * FROM $game WHERE day=" . $_SESSION['day'] . " AND id='" . $_SESSION['uid'] . "';";
+        $qavg = "SELECT avg(invest) from $game WHERE id='" . $_SESSION['uid'] . "';";
         $result_avg = mysqli_query($conn, $qavg);
-        $resultnbr = mysqli_query($conn, $sqlnbr);
-        $rownbr = mysqli_fetch_array($resultnbr, MYSQLI_ASSOC);
+        // $rownbr = mysqli_fetch_array($resultnbr, MYSQLI_ASSOC);
         $avg = mysqli_fetch_array($result_avg, MYSQLI_ASSOC);
-        $x = $rownbr['invest'];
+        $x = $invest;
         $y = $avg['avg(invest)'];
-        $_SESSION['nbr_pay'] = round($a * $x + (1 - $a) * $y,0);
+        $_SESSION['nbr_pay'] = round(($x*$a + (1-$a)*$y),0);
         $friend_invest = $_SESSION['nbr_pay'];
     }
 
