@@ -32,7 +32,7 @@ if (!isset($_SESSION["uid"])) {
 
 <?php   } else {
     if (!isset($_SESSION["version"])) {
-        $_SESSION["version"] = $_POST["version"];
+        // $_SESSION["version"] = $_POST["version"];
         if ($_SESSION['version'] == 1) {
             $game = "game1";
         } else if ($_SESSION['version'] == 2) {
@@ -225,7 +225,7 @@ Therefore, this game presents people the right information that must be known to
                             </tr>
                             <!--          <tr class="info">
                         <th>Yesterday's investment (Y)</th>
-                        <th><? php // if($_SESSION['day'] == 1) {echo '-';} //else //{echo round($_SESSION['invest'],1)//;} 
+                        <th><?php // if($_SESSION['day'] == 1) {echo '-';} //else //{echo round($_SESSION['invest'],1)//;} 
                             ?></th>
 </tr>-->
                             <!--<tr class="info">
@@ -242,9 +242,13 @@ Therefore, this game presents people the right information that must be known to
                                         echo $abd;
                                         $_SESSION['income_not_invested'][0] = 0;
                                     } else {
+                                        if($_SESSION['version']==1)$game="game1";
+                                        if($_SESSION['version']==2)$game="game2";
+                                        if($_SESSION['version']==3)$game="game3";
+
                                         $unqid = $_SESSION['uid'];
                                         $ntm = 0;
-                                        $sqlntm = "SELECT daily_income-invest from game where id='$unqid' AND day >0;";
+                                        $sqlntm = "SELECT daily_income-invest from $game where id='$unqid' AND day >0;";
                                         if ($resultntm = mysqli_query($conn, $sqlntm)) {
                                             while ($rowntm = mysqli_fetch_array($resultntm, MYSQLI_NUM)) {
                                                 $ntm = $ntm + $rowntm[0];
@@ -277,6 +281,9 @@ Therefore, this game presents people the right information that must be known to
                                         echo "-";
                                         $td = 0;
                                     } else {
+                                        if($_SESSION['version']==1)$game="game1";
+                                        if($_SESSION['version']==2)$game="game2";
+                                        if($_SESSION['version']==3)$game="game3";
 
                                         $unqid = $_SESSION['uid'];
                                         $td = 0;
@@ -285,7 +292,7 @@ Therefore, this game presents people the right information that must be known to
                                             $rowtd = mysqli_fetch_array($resulttd, MYSQLI_ASSOC);
                                             echo round($rowtd['SUM(damage)'],1);
                                         } else {
-                                            echo "not found";
+                                            echo $_SESSION['version'];
                                         }
                                     }
                                     ?></th>
