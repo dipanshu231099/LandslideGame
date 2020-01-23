@@ -164,7 +164,7 @@ Therefore, this game presents people the right information that must be known to
                                 <div class="form-group">
                                     <div class=container1>
                                         <label>
-                                            <h3>Your Investment for landslides for day <?php echo $_SESSION['day']; ?> (between 0.0 and <?php $abd = floor($_SESSION['daily_income'] * 10) / 10;
+                                            <h3>Your Investment for landslides for month <?php echo $_SESSION['day']; ?> (between 0.0 and <?php $abd = floor($_SESSION['daily_income'] * 10) / 10;
                                                                                                                                         echo $abd; ?>):</h3>
                                         </label>
                                         <input type="number" class="form-control" id="invest" name="invest" step="0.1" min=0.0 max=<?php echo $abd; ?> required> <?php echo 'For no investment, please enter 0.0'; ?>
@@ -214,7 +214,7 @@ Therefore, this game presents people the right information that must be known to
                                 </tr>
                             </thead>
                             <tr class="info">
-                                <th>Day</th>
+                                <th>Month</th>
                                 <th><?php echo $_SESSION['day']; ?></th>
                             </tr>
                             <tr class="info">

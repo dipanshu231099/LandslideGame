@@ -121,7 +121,7 @@ Therefore, this game presents people the right information that must be known to
             <h1 class="text-center">Consent Form</h1><br>
             <p class="text-center">
                 <p class="text-justify">
-                        This game is part of a research study conducted by Varun Dutt and Pratik Chaturvedi at the Indian Institute of Technology, Mandi, India. The game was coded by Akshit Arora, an undergraduate student in Computer Science and Engineering at the Thapar University, Patiala, India.
+                        This game is part of a research study conducted by Varun Dutt at the Indian Institute of Technology, Mandi, India. The game was coded by Akshit Arora,Ayushman Dixit,Dipanshu Verma and Harsh Katakwar.
                 </p>
                 <p class="text-justify">
                        The purpose of the research is to find out how human and environmental factors play a role in decision-making against landslides.
@@ -169,9 +169,10 @@ Therefore, this game presents people the right information that must be known to
                 <blockquote>
             Dr. Varun Dutt<br>
             Applied Cognitive Science Lab<br>
-                    Academic Block, Paddal Ground<br>
+                    Academic Block -4 , South Campus<br>
             Indian Institute of Technology, Mandi<br>
-            Mandi, Himachal Pradesh, India - 175001<br>
+            Mandi, Himachal Pradesh, India - 175005<br>
+
                         +91 (1905) 267-041<br>
                         varun@iitmandi.ac.in
                 </blockquote>

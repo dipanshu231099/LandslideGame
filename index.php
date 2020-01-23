@@ -1,5 +1,6 @@
-<?php include 'head.php'; 
-session_start();?>
+<?php  
+session_start();
+include 'head.php';?>
 
 <style type="text/css">
         button{
