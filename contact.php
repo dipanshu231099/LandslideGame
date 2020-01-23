@@ -35,33 +35,47 @@ session_destroy();
     <div class="container-fluid">
         <div class="jumbotron"><h1 class="text-center"><i class="fa fa-users"></i> The Team</h1></div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
     <blockquote>
         <h4 class="kalam">Faculty Advisor:</h4><br>
         <embed src="varun.jpg" height="150" width="150">
         
         <a href="http://faculty.iitmandi.ac.in/~varun/"><h3><b>Dr. Varun Dutt</b></h3></a><br>
-    <i class="fa fa-user"></i> Assistant Professor<br>
+    <i class="fa fa-user"></i> Associate Professor<br>
     <a href="http://www.acslab.org/"><i class="fa fa-plus-square"></i> ACS Lab</a><br>
     <a href="http://www.iitmandi.ac.in"><i class="fa fa-external-link"></i>Indian Institute of Technology, Mandi</a><br>
     <i class="fa fa-map-marker"></i> Himachal Pradesh, India - 175001<br>
     <i class="fa fa-phone"></i> +91 (1905) 267-041<br>
     <i class="fa fa-envelope-o"></i> varun@iitmandi.ac.in<br>
     </blockquote>
-        </div><div class="col-md-4">
+        </div><div class="col-md-3">
     <blockquote>
-        <h4 class="kalam">Project Associate:</h4><br>
-        <embed src="pratik.jpg" height="150" width="150">
+        <h4 class="kalam">Website Developer:</h4><br>
+        <embed src="Ayushman.jpg" height="150" width="150">
         
-        <a href="http://www.researchgate.net/profile/Pratik_Chaturvedi"><h3><b>Mr. Pratik Chaturvedi</b></h3></a><br>
-    <i class="fa fa-user"></i> Ph.D. Student<br>
-    <a href="http://www.acslab.org/"><i class="fa fa-plus-square"></i> ACS Lab</a><br>
+        <a href="https://www.facebook.com/ayushman.dixit.7"><h3><b>Mr. Ayushman Dixit</b></h3></a><br>
+    <i class="fa fa-user"></i> B.Tech Student<br>
+    <a href="http://www.acslab.org/"><i class="fa fa-plus-square"></i> Computer Science Engineering</a><br>
         <a href="http://www.iitmandi.ac.in"><i class="fa fa-external-link"></i>Indian Institute of Technology, Mandi</a><br>
-    <i class="fa fa-map-marker"></i> Himachal Pradesh, India - 175001<br>
-    <i class="fa fa-phone"></i> +91 93 13 131129<br>
-    <i class="fa fa-envelope-o"></i> prateek@dtrl.drdo.in<br>
+    <i class="fa fa-map-marker"></i> Himachal Pradesh, India - 175005<br>
+    <i class="fa fa-phone"></i> +91 8544788415<br>
+    <i class="fa fa-envelope-o"></i> b18164@students.iitmandi.ac.in<br>
     </blockquote>
-        </div><div class="col-md-4">
+        </div>
+        <div class="col-md-3">
+    <blockquote>
+        <h4 class="kalam">Website Developer:</h4><br>
+        <embed src="dipanshi.jpg" height="150" width="150">
+        
+        <a href="https://www.facebook.com/dipanshu231099"><h3><b>Mr. Dipanshu Verma</b></h3></a><br>
+    <i class="fa fa-user"></i> B.Tech Student<br>
+    <a href="http://www.acslab.org/"><i class="fa fa-plus-square"></i> Computer Science Engineering</a><br>
+        <a href="http://www.iitmandi.ac.in"><i class="fa fa-external-link"></i>Indian Institute of Technology, Mandi</a><br>
+    <i class="fa fa-map-marker"></i> Himachal Pradesh, India - 175005<br>
+    <i class="fa fa-phone"></i> +91 9041118938<br>
+    <i class="fa fa-envelope-o"></i> b18054@students.iitmandi.ac.in<br>
+    </blockquote>
+        </div><div class="col-md-3">
     <blockquote>
         <h4 class="kalam">Website Developer:</h4><br>
         <embed src="akshit.jpg" height="150" width="150">
