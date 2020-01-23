@@ -156,11 +156,15 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
         $_SESSION['p_injury'] = $injury;
         //$spatial = $row["p_spatial"]; no more fetching single value from param table
         $rand_spatial = round(mt_rand() / mt_getrandmax(), 2);
-        //NOW APPLYING interpolation to modify spatial probability 
-        $near = $rand_spatial * 100;
-        $near = $near % 5;
-        $near = $rand_spatial - 0.01 * $near;
+        $_SESSION['rand_spatial']=$rand_spatial;
+        $near = $rand_spatial * 98;
+        $near = round($near,0);
+        $near = $near - ($near%5);
+        $near = $near/100;
         $sqlnear = "SELECT * FROM spatial_p WHERE low=" . $near . ";";
+
+        // die($near);
+
         $resultnear = mysqli_query($conn, $sqlnear);
         $rownear = mysqli_fetch_array($resultnear, MYSQLI_ASSOC);
         $value1 = $rownear["value"];
@@ -176,6 +180,9 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
         $slope = ($value2 - $value1) / ($near2 - $near);
         $spatial = $rand_spatial * $slope + $value1 - $slope * $near;
         $_SESSION['p_spatial'] = $spatial;
+
+        if(!$_SESSION['p_spatial'])die($value1);
+
         $_SESSION['final_money'] = $mini;
 
         $_SESSION['daily_income_array'][0] = $dinc;

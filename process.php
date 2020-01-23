@@ -69,7 +69,7 @@ if (!isset($_SESSION['uid'])) {
     $rand_property = round(mt_rand() / mt_getrandmax(), 5);
     $rand_fatality = round(mt_rand() / mt_getrandmax(), 5);
     $rand_injury = round(mt_rand() / mt_getrandmax(), 5);
-    $rand_spatial = round(mt_rand() / mt_getrandmax(), 5);
+    $rand_spatial = $_SESSION['rand_spatial'];
     $p_temporal = $_SESSION['p_temporal'];
 
     $p_spatial = $_SESSION['p_spatial'];

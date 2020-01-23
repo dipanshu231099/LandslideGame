@@ -51,12 +51,26 @@ if (!isset($_SESSION["uid"])) {
     $day = $_SESSION['day'];
     $day_temporal = $day + $_SESSION['day_initial_temporal'] - 1;
     $conn = new mysqli("localhost", "u978805288_user", "password", "u978805288_acs_draft");
-    $sqlinp = "SELECT p_temporal FROM reference WHERE day='$day_temporal'";
-    $resulti = mysqli_query($conn, $sqlinp);
-    $tempo = mysqli_fetch_array($resulti, MYSQLI_ASSOC);
+    // $sqlinp = "SELECT p_temporal FROM reference WHERE day='$day_temporal'";
+    // $resulti = mysqli_query($conn, $sqlinp);
+    // $tempo = mysqli_fetch_array($resulti, MYSQLI_ASSOC);
     //   $spatial = $_SESSION['p_spatial'];
+    if($day%12 == 1)$p_temporal=0.088411000;
+    else if($day%12 == 2)$p_temporal=0.062823000;
+    else if($day%12 == 3)$p_temporal=0.064422000;
+    else if($day%12 == 4)$p_temporal=0.059965000;
+    else if($day%12 == 5)$p_temporal=0.218549000;
+    else if($day%12 == 6)$p_temporal=0.674991000;
+    else if($day%12 == 7)$p_temporal=0.878744000;
+    else if($day%12 == 8)$p_temporal=0.332772000;
+    else if($day%12 == 9)$p_temporal=0.043983000;
+    else if($day%12 == 10)$p_temporal=0.024852000;
+    else if($day%12 == 11)$p_temporal=0.032376000;
+    else if($day%12 == 0)$p_temporal=0.084888000;
 
-    $p_temporal = $tempo["p_temporal"];
+    // die($p_temporal);
+
+    // $p_temporal = $tempo["p_temporal"];
     $_SESSION['p_temporal'] = $p_temporal;
     $spatial = $_SESSION['p_spatial'];
     $_SESSION['p_rain'] = $spatial * $p_temporal;
