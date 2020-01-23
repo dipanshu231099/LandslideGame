@@ -50,7 +50,7 @@ if (!isset($_SESSION["uid"])) {
     $_SESSION['process'] = 'false';
     $day = $_SESSION['day'];
     $day_temporal = $day + $_SESSION['day_initial_temporal'] - 1;
-    $conn = new mysqli("localhost", "user", "password", "u978805288_acs_draft");
+    $conn = new mysqli("localhost", "u978805288_user", "password", "u978805288_acs_draft");
     $sqlinp = "SELECT p_temporal FROM reference WHERE day='$day_temporal'";
     $resulti = mysqli_query($conn, $sqlinp);
     $tempo = mysqli_fetch_array($resulti, MYSQLI_ASSOC);
