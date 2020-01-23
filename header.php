@@ -1,12 +1,4 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
-<!-- /*
-        //////     //////   //////       /       /     /   //////  //   /   //   /
-         /    /      /       /    /     / /      / /   /  /         /   /    /   /
-         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
-         /    /      /       /        / /// /    /    //        /   /   /    /   /
-        //////     //////    /       /       /   /     /  //////    /   //    ///
-
-    */ -->
         <div class="container-fluid">
             <!-- Logo -->
             <div class="row"> <div class=col-md-1> <a href="index.php"><embed height="50" width="50" src="23.png"></a></div>

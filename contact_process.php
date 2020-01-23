@@ -1,13 +1,4 @@
 <?php session_start();
-
-    /*
-        //////     //////   //////       /       /     /   //////  //   /   //   /
-         /    /      /       /    /     / /      / /   /  /         /   /    /   /
-         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
-         /    /      /       /        / /// /    /    //        /   /   /    /   /
-        //////     //////    /       /       /   /     /  //////    /   //    ///
-
-    */
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['body']))
 {
     $name = $_POST['name'];$_SESSION['akshit'] = $name;
@@ -19,7 +10,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['body']))
     $body = $bodyinp;
     $headers = 'From: '.$email;
     
-    if(mail($to,$subject,$body,$headers)) {  $_SESSION['mail'] = true;   header('Location: contact.php') ; die();
+    if(mail($to,$subject,$body,$headers)) {  $_SESSION['mail'] = true;   header('Location: http://pratik.acslab.org/contact.php') ; die();
                                           }else
 echo 'not okay';
     

@@ -1,15 +1,5 @@
 <!-- capturing demographic information -->
-
 <?php error_reporting(0);session_start();
-
-    /*
-        //////     //////   //////       /       /     /   //////  //   /   //   /
-         /    /      /       /    /     / /      / /   /  /         /   /    /   /
-         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
-         /    /      /       /        / /// /    /    //        /   /   /    /   /
-        //////     //////    /       /       /   /     /  //////    /   //    ///
-
-    */
 
 if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 

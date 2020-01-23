@@ -1,12 +1,5 @@
 <!-- contact page -->
-     <?php include 'head.php';error_reporting(0);    /*
-        //////     //////   //////       /       /     /   //////  //   /   //   /
-         /    /      /       /    /     / /      / /   /  /         /   /    /   /
-         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
-         /    /      /       /        / /// /    /    //        /   /   /    /   /
-        //////     //////    /       /       /   /     /  //////    /   //    ///
-
-    */ ?>
+     <?php include 'head.php';error_reporting(0); ?>
 <body>
     <!--HEADER -->
     <nav class="navbar navbar-inverse navbar-fixed-top">

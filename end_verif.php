@@ -20,3 +20,4 @@ session_destroy();
 } else {
 echo "You haven't completed the game yet. Please complete the game first! <a href='http://pratik.acslab.org/game.php'>Click here to get back to the game</a>.";
 }
+?>
