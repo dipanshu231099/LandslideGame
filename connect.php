@@ -1,4 +1,11 @@
-<?php   error_reporting(0);session_start();
+<?php   error_reporting(0);session_start();    /*
+        //////     //////   //////       /       /     /   //////  //   /   //   /
+         /    /      /       /    /     / /      / /   /  /         /   /    /   /
+         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
+         /    /      /       /        / /// /    /    //        /   /   /    /   /
+        //////     //////    /       /       /   /     /  //////    /   //    ///
+
+    */
 if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
 <!DOCTYPE html>

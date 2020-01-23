@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="jumbotron">
-                <h2 class="text-center"><i class="fa fa-smile-o"></i> Landslide did not Occur! /*<?php echo  $_SESSION['version']; ?>*/ </h2>
+                <h2 class="text-center"><i class="fa fa-smile-o"></i> Landslide did not Occur! <span style="color: #eee">/*<?php echo  $_SESSION['version']; ?>*/</span> </h2>
                 <br><br>
 <p>You made <strong><?php echo  $_SESSION['invest'];?></strong> investment.</p>
                <?php if(isset($_SESSION['nbr_pay']) ) { ?>

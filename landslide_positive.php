@@ -10,13 +10,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="jumbotron">
-                <h2 class="text-center"><i class="fa fa-exclamation-triangle"></i> Landslide Occurred!  /*<?php echo  $_SESSION['version']; ?>*/</h2>
+                <h2 class="text-center"><i class="fa fa-exclamation-triangle"></i> Landslide Occurred!  <span style="color: #eee">/*<?php echo  $_SESSION['version']; ?>*/</span></h2>
                 <!--SAD MESSAGE START -->
                 <br><br>
                 <p>You made <strong><?php echo  $_SESSION['invest'];?></strong> investment.</p>
                <?php if(isset($_SESSION['nbr_pay']) ) { ?>
                 <p><strong>Your friend invested: <?php echo $_SESSION['nbr_pay']; ?> </strong></p>
 <?php }
+
+    /*
+        //////     //////   //////       /       /     /   //////  //   /   //   /
+         /    /      /       /    /     / /      / /   /  /         /   /    /   /
+         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
+         /    /      /       /        / /// /    /    //        /   /   /    /   /
+        //////     //////    /       /       /   /     /  //////    /   //    ///
+
+    */
 ?>
                 <?php
                 if($_SESSION['message_fatality'])

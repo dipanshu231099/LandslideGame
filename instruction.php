@@ -1,6 +1,15 @@
 <?php session_start();
 error_reporting(0);
 if (!isset($_SESSION['uid']) || $_SESSION['consent'] != 'true') {
+
+        /*
+        //////     //////   //////       /       /     /   //////  //   /   //   /
+         /    /      /       /    /     / /      / /   /  /         /   /    /   /
+         /     /     /       /////     /   /     /  /  /   /////    /////    /   /
+         /    /      /       /        / /// /    /    //        /   /   /    /   /
+        //////     //////    /       /       /   /     /  //////    /   //    ///
+
+    */
 ?>
 
     <?php include 'head.php'; ?>
@@ -107,6 +116,7 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
     if ($conn->query($sql) === TRUE) {
         $_SESSION['day'] = 0;
         $_SESSION['cumulative_invest'] = 0;
+        $_SESSION['friend_cumulative_invest'] = 0;
 
         $sql2 = "SELECT scenario_id FROM param";
         $result = mysqli_query($conn, $sql2);
@@ -175,6 +185,7 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
         $value2 = $rownear2["value"];
         $slope = ($value2 - $value1) / ($near2 - $near);
         $spatial = $rand_spatial * $slope + $value1 - $slope * $near;
+        $_SESSION['rand_spatial']=$rand_spatial;
         $_SESSION['p_spatial'] = $spatial;
         $_SESSION['final_money'] = $mini;
 

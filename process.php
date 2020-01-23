@@ -48,6 +48,7 @@ if (!isset($_SESSION['uid'])) {
     //die();
     //}
     $_SESSION['cumulative_invest'] = $_SESSION['cumulative_invest'] + $invest;
+    $_SESSION['friend_cumulative_invest'] = $_SESSION['friend_cumulative_invest'] + $_SESSION['nbr_pay'];
     $cumulative_invest = $_SESSION['cumulative_invest'];
     $M = $_SESSION['return_mitigation'];
     $money_ini = $_SESSION['money_ini'];
@@ -69,7 +70,7 @@ if (!isset($_SESSION['uid'])) {
     $rand_property = round(mt_rand() / mt_getrandmax(), 5);
     $rand_fatality = round(mt_rand() / mt_getrandmax(), 5);
     $rand_injury = round(mt_rand() / mt_getrandmax(), 5);
-    $rand_spatial = round(mt_rand() / mt_getrandmax(), 5);
+    $rand_spatial = $_SESSION['rand_spatial'];
     $p_temporal = $_SESSION['p_temporal'];
 
     $p_spatial = $_SESSION['p_spatial'];
@@ -77,7 +78,7 @@ if (!isset($_SESSION['uid'])) {
     $p_rain = $_SESSION['p_rain'];
 
     $p_investment = $_SESSION['p_invest'];
-    $p_investment = 1 - $M * (($cumulative_invest + $_SESSION['nbr_pay']) / (2 * $income_unaffected_cumulative));
+    $p_investment = 1 - $M * (($cumulative_invest + $_SESSION['friend_cumulative_invest']) / (2 * $income_unaffected_cumulative));
     $_SESSION['p_invest'] = $p_investment;
 
     $p_landslide = $p_rain * (1 - $w_i) + $p_investment * ($w_i);
@@ -153,8 +154,8 @@ if (!isset($_SESSION['uid'])) {
 
     
 
-    $sqlr = "INSERT INTO dd (invest) values ('$invest');";
-    $resultchoo = mysqli_query($conn, $sqlr);
+    // $sqlr = "INSERT INTO dd (invest) values ('$invest');";
+    // $resultchoo = mysqli_query($conn, $sqlr);
     $_SESSION['process'] = 'true';
     //if($_SESSION['day'] == $t_span) {
     //     header('Location: http://pratik.acslab.org/end.php'); die();
