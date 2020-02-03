@@ -35,6 +35,12 @@ session_destroy();
             <div class="col-md-8"><div class="jumbotron">
                 <h1>Congrats!</h1> <br><h3> You have completed the game successfully.</h3><br><br>
             <br>
+            <h3>Save this code for your reward</h3><br>
+            <?php
+            echo $_SESSION['uid'];
+            echo "<br>";
+            ?>
+
 <p>Thank you for your participation. <!--Now, please click the button below to indicate to Academic Prolific that you have completed the study.--></p>
 <!--<div class="containerx">  -->         <?php //echo "<a href='http://pratik.acslab.org/end_verif.php'><button class='btn btn-info btn-lg' style=\"position:'relative';left:'25%'\">Click here</button></a>";//?>
                 <!--</div>-->
