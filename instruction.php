@@ -156,11 +156,11 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
         $_SESSION['p_injury'] = $injury;
         //$spatial = $row["p_spatial"]; no more fetching single value from param table
         $rand_spatial = round(mt_rand() / mt_getrandmax(), 2);
-        $_SESSION['rand_spatial']=$rand_spatial;
+        $_SESSION['rand_spatial'] = $rand_spatial;
         $near = $rand_spatial * 98;
-        $near = round($near,0);
-        $near = $near - ($near%5);
-        $near = $near/100;
+        $near = round($near, 0);
+        $near = $near - ($near % 5);
+        $near = $near / 100;
         $sqlnear = "SELECT * FROM spatial_p WHERE low=" . $near . ";";
 
         // die($near);
@@ -181,7 +181,7 @@ VALUES ('$unqid','$age','$gender','$ed','$occ','$major','$email','$city','$live'
         $spatial = $rand_spatial * $slope + $value1 - $slope * $near;
         $_SESSION['p_spatial'] = $spatial;
 
-        if(!$_SESSION['p_spatial'])die($value1);
+        if (!$_SESSION['p_spatial']) die($value1);
 
         $_SESSION['final_money'] = $mini;
 
@@ -247,7 +247,7 @@ VALUES ('$rand_spatial','$consent','$unqid','0','$winv','$dinc','$mini','$ret','
                                             echo $mney; ?> million EC</strong></p>
                     <p>When a landslide occurs:</p>
                     <p>If a death occurs, your monthly income will be reduced by <strong><?php $fat_loss = 100 * $_SESSION['fatality_daily_inc_loss'];
-                                                                                        echo  $fat_loss; ?></strong>% of its current value.</p>
+                                                                                            echo  $fat_loss; ?></strong>% of its current value.</p>
                     <p>If an injury takes place, your monthly income will be reduced by <strong><?php $inj_loss = 100 * $_SESSION['injury_daily_inc_loss'];
                                                                                                 echo $inj_loss; ?></strong>% of its current value.</p>
                     <p>If a property damage occurs, your wealth will be reduced by <strong><?php $a =  $_SESSION['wealth_property'] * 100;
@@ -258,7 +258,7 @@ VALUES ('$rand_spatial','$consent','$unqid','0','$winv','$dinc','$mini','$ret','
                 </div>
             </div>
             <?php include 'footer.php';
-             $_SESSION['version'] = rand(1,4);
+            $_SESSION['version'] = rand(1, 4);
             ?>
         </body>
 
