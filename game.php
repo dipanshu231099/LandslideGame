@@ -37,8 +37,10 @@ if (!isset($_SESSION["uid"])) {
             $game = "game1";
         } else if ($_SESSION['version'] == 2) {
             $game = "game2";
-        } else {
+        } else if($_SESSION['version']==3) {
             $game = "game3";
+        } else {
+            $game = "game4";
         }
     }
     echo "<script>console.log('" . $_SESSION["version"] . "')</script>";
@@ -259,6 +261,7 @@ Therefore, this game presents people the right information that must be known to
                                         if($_SESSION['version']==1)$game="game1";
                                         if($_SESSION['version']==2)$game="game2";
                                         if($_SESSION['version']==3)$game="game3";
+                                        if($_SESSION['version']==4)$game="game4";
 
                                         $unqid = $_SESSION['uid'];
                                         $ntm = 0;
@@ -298,6 +301,7 @@ Therefore, this game presents people the right information that must be known to
                                         if($_SESSION['version']==1)$game="game1";
                                         if($_SESSION['version']==2)$game="game2";
                                         if($_SESSION['version']==3)$game="game3";
+                                        if($_SESSION['version']==4)$game="game4";
 
                                         $unqid = $_SESSION['uid'];
                                         $td = 0;

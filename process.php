@@ -144,9 +144,12 @@ if (!isset($_SESSION['uid'])) {
     } else if ($_SESSION['version'] == 2) {
         $game = "game2";
         $a = 0.5;
-    } else {
+    } else if ($_SESSION['version'] == 3) {
         $game = "game3";
         $a = 0.8;
+    } else {
+        $game= "game4";
+        $a = 0;
     }
 
     
