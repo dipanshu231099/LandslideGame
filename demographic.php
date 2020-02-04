@@ -149,7 +149,7 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label>If you marked “No” above, then mention the city/town where you currently live:</label>
-                        <input type="text" class="form-control" id="liveno" name="liveno" placeholder="city town of current residence" required>
+                        <input type="text" class="form-control" id="liveno" name="liveno" placeholder="city town of current residence">
                     </div>
 
                     <div class="form-group">
@@ -212,7 +212,7 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label for=xyz>If you marked “Other” above, please specify:</label>
-                        <input id=xyz type="text" class="form-control" id="dwellother" name="dwellother" placeholder="type of dwelling" required>
+                        <input id=xyz type="text" class="form-control" id="dwellother" name="dwellother" placeholder="type of dwelling">
                     </div>
 
                     <div class="form-group">
@@ -274,7 +274,7 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label>If you marked “Other” above, please specify:</label>
-                        <input type="text" class="form-control" id="sourceother" name="sourceother" placeholder="Source of Income" required>
+                        <input type="text" class="form-control" id="sourceother" name="sourceother" placeholder="Source of Income">
                     </div>
 
                     <div class="form-group">
