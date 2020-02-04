@@ -129,12 +129,12 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label>Occupation (If retired, state Retired and specify former occupation):</label>
-                        <input type="text" class="form-control" id="occ" name="occ" placeholder="occupation" required>
+                        <input type="text" class="form-control" id="occ" name="occ" placeholder="Occupation" required>
                     </div>
 
                     <div class="form-group">
                         <label>The city/town to which you belong to:</label>
-                        <input type="text" class="form-control" id="city" name="city" placeholder="city" required>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
                     </div>
 
                     <div class="form-group">
@@ -149,7 +149,7 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label>If you marked “No” above, then mention the city/town where you currently live:</label>
-                        <input type="text" class="form-control" id="liveno" name="liveno" placeholder="city town of current residence">
+                        <input type="text" class="form-control" id="liveno" name="liveno" placeholder="City/town of current residence">
                     </div>
 
                     <div class="form-group">
@@ -212,7 +212,7 @@ if (!isset($_GET['id']) && empty($_GET['id'])) { ?>
 
                     <div class="form-group">
                         <label for=xyz>If you marked “Other” above, please specify:</label>
-                        <input id=xyz type="text" class="form-control" id="dwellother" name="dwellother" placeholder="type of dwelling">
+                        <input id=xyz type="text" class="form-control" id="dwellother" name="dwellother" placeholder="Type of dwelling">
                     </div>
 
                     <div class="form-group">

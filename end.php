@@ -39,10 +39,10 @@ if (!isset($_SESSION['uid'])) {
         <div class="col-md-2"></div>
             <div class="col-md-8 text-center">
                 <div class="jumbotron">
-                    <h1>Congrats!</h1> <br>
+                    <h1>Congratulations!</h1> <br>
                     <h3> You have completed the game successfully.</h3><br><br>
                     <br>
-                    <h3>Copy the code, and redeem this code to avail your reward for your participation</h3><br>
+                    <h3>Copy the code below and paste it in the appropriate text box for receiving payment for your participation.</h3><br>
                     <?php
                     echo $_SESSION['uid'];
                     echo "<br>";

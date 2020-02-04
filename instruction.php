@@ -1,6 +1,7 @@
 <?php session_start();
 error_reporting(0);
 if (!isset($_SESSION['uid']) || $_SESSION['consent'] != 'true') {
+    die('echo no connection possible;');
 ?>
 
     <?php include 'head.php'; ?>
@@ -40,7 +41,7 @@ if (!isset($_SESSION['uid']) || $_SESSION['consent'] != 'true') {
                 <p class="text-justify">
                     <!-- instructions start-->
                     You are a resident of Mandi district of Himachal Pradesh, India, a township in the lap of Himalayas. You with your family and friends live on your property in this area. Landslides may get triggered in this area due to a number of environmental factors (e.g., the prevailing geological conditions and rainfall in the area). These landslides may cause fatalities and injuries to you and your family. In addition, these landslides may also damage your property and cause loss to your property wealth.
-                    <br><br><strong>In this task, you will be repeatedly making daily investment decisions to mitigate landslides over a period of several months. You may have a friend (it may be possible you do not have a friend) in the game who will also make monetary decisions against landslides.</strong> In this task, we use a fictitious currency called “EC”. Every month, you earn 10512 EC. This money is your daily income and you may use a part or whole of it for making investments against landslides. Your investments will be used to provide landslide mitigation measures like planting trees and building reinforcements, both of which prevent landslides from occurring. <strong>Every month, you may decide to invest a certain monetary amount from your income towards landslide mitigation; however, you may also decide not to invest anything on a particular month (in which case, you invest 0.0 against landslides).</strong>
+                    <br><br><strong>In this task, you will be repeatedly making daily investment decisions to mitigate landslides over a period of several months. You may have a friend in the game who also makes monetary decisions against landslides.</strong> In this task, we use a fictitious currency called “EC”. Every month, you earn 10512 EC. This money is your daily income and you may use a part or whole of it for making investments against landslides. Your investments will be used to provide landslide mitigation measures like planting trees and building reinforcements, both of which prevent landslides from occurring. <strong>Every month, you may decide to invest a certain monetary amount from your income towards landslide mitigation; however, you may also decide not to invest anything on a particular month (in which case, you invest 0.0 against landslides).</strong>
                     Based upon your investments against landslides, you’ll get feedback on whether landslides occurred and whether there were associated fatalities, injuries, and property damages (all three events are independent and they can occur at the same time).
                     <br><br><strong>Your total wealth at any point in the task is the following: sum of your income that you did not invest against landslides + your property wealth - damages to you, your family, and to your property due to landslides</strong>. Your property wealth is assumed to be 5 million EC at the start of the task. The income invested against landslides is lost and it cannot contribute to the total wealth. <strong>Your goal in this task is to maximize your total wealth</strong>.
                     <br><br><strong>Please note that landslides may occur; however, not all landslides may cause fatalities, injuries, and property damage</strong>. If a landslide occurs and it causes fatality, then your daily income is reduced by 20% of its current value. If a landslide occurs and it causes injury, then your daily income is reduced by 10% of its current value. Thus, your income may get reduced with each fatality and injury due to landslides. Furthermore, if a landslide occurs and it causes property damage, then your property wealth is reduced by 50% of its current value. The reductions in income due fatalities, injuries, and property damage are permanent and remain for the duration of the task.
@@ -64,14 +65,14 @@ if (!isset($_SESSION['uid']) || $_SESSION['consent'] != 'true') {
         $data = htmlspecialchars($data);
         return $data;
     };
-    if (!empty($_POST['age']) && !empty($_POST['gender']) && !empty($_POST['ed']) && !empty($_POST['occ']) && !empty($_POST['major']) && !empty($_POST['email'])) {
+    if (!empty($_POST['age']) && !empty($_POST['gender']) && !empty($_POST['ed']) && !empty($_POST['occ']) && !empty($_POST['major'])) {
 
         $age = test_input($_POST['age']);
         $gender = test_input($_POST['gender']);
         $ed = test_input($_POST['ed']);
         $occ = test_input($_POST['occ']);
         $major = test_input($_POST['major']);
-        $email = $_POST['email'];
+        $email = "not applicable";
 
         $city = test_input($_POST['city']);
         $live = test_input($_POST['live']);
@@ -222,17 +223,13 @@ VALUES ('$rand_spatial','$consent','$unqid','0','$winv','$dinc','$mini','$ret','
                 </div>
             </nav> <br><br><br><br>
             <div class="container">
-                <div class="alert alert-success">
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                    <strong>Good to go!</strong> Entry Submitted Successfully.
-                </div>
                 <div class="jumbotron">
                     <h1 class="text-center">Welcome!</h1><br><br><br><br>
                     <p class="text-justify">
 
                         <!-- instructions start-->
                         You are a resident of Mandi district of Himachal Pradesh, India, a township in the lap of Himalayas. You with your family and friends live on your property in this area. Landslides may get triggered in this area due to a number of environmental factors (e.g., the prevailing geological conditions and rainfall in the area). These landslides may cause fatalities and injuries to you and your family. In addition, these landslides may also damage your property and cause loss to your property wealth.
-                        <br><br><strong>In this task, you will be repeatedly making monthly investment decisions to mitigate landslides over a period of several months. You may have a friend in the game (It may be possible you do not have a friend) who also makes monetary decisions against landslides.</strong> In this task, we use a fictitious currency called “EC”. Every month, you earn 10512 EC. This money is your monthly income and you may use a part or whole of it for making investments against landslides. Your investments will be used to provide landslide mitigation measures like planting trees and building reinforcements, both of which prevent landslides from occurring. <strong>Every month, you may decide to invest a certain monetary amount from your income towards landslide mitigation; however, you may also decide not to invest anything on a particular month (in which case, you invest 0.0 against landslides). Your friend may also decide to invest a certain monetary amount from his income towards landslide mitigation.</strong> Based upon your investments against landslides, you’ll get feedback on whether landslides occurred and whether there were associated fatalities, injuries, and property damages (all three events are independent and they can occur at the same time).
+                        <br><br><strong>In this task, you will be repeatedly making monthly investment decisions to mitigate landslides over a period of several months. You may have a friend in the game who also makes monetary decisions against landslides.</strong> In this task, we use a fictitious currency called “EC”. Every month, you earn 10512 EC. This money is your monthly income and you may use a part or whole of it for making investments against landslides. Your investments will be used to provide landslide mitigation measures like planting trees and building reinforcements, both of which prevent landslides from occurring. <strong>Every month, you may decide to invest a certain monetary amount from your income towards landslide mitigation; however, you may also decide not to invest anything on a particular month (in which case, you invest 0.0 against landslides). Your friend may also decide to invest a certain monetary amount from his income towards landslide mitigation.</strong> Based upon your investments against landslides, you’ll get feedback on whether landslides occurred and whether there were associated fatalities, injuries, and property damages (all three events are independent and they can occur at the same time).
                         <br><br><strong>Your total wealth at any point in the task is the following: sum of your income that you did not invest against landslides + your property wealth - damages to you, your family, and to your property due to landslides</strong>. Your property wealth is assumed to be 5 million EC at the start of the task. The income invested against landslides is lost and it cannot contribute to the total wealth. <strong>Your goal in this task is to maximize your total wealth</strong>.
                         <br><br><strong>Please note that landslides may occur; however, not all landslides may cause fatalities, injuries, and property damage</strong>. If a landslide occurs and it causes fatality, then your monthly income is reduced by 20% of its current value. If a landslide occurs and it causes injury, then your monthly income is reduced by 10% of its current value. Thus, your income may get reduced with each fatality and injury due to landslides. Furthermore, if a landslide occurs and it causes property damage, then your property wealth is reduced by 50% of its current value. The reductions in income due fatalities, injuries, and property damage are permanent and remain for the duration of the task.
                         <br><br>The total probability of landslide is a weighted average of probability of landslide due to environmental factors and probability of landslide due to human (investment) factor. The income you invest to mitigate landslides may reduce the probability of landslide due to the human factor and also may reduce the total probability of landslides.
