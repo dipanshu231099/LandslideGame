@@ -36,7 +36,8 @@ if (!isset($_SESSION['uid'])) {
     <!-- BODY -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 text-center">
+        <div class="col-md-2"></div>
+            <div class="col-md-8 text-center">
                 <div class="jumbotron">
                     <h1>Congrats!</h1> <br>
                     <h3> You have completed the game successfully.</h3><br><br>
@@ -57,6 +58,7 @@ if (!isset($_SESSION['uid'])) {
 
                 </div>
             </div>
+        <div class="col-md-2"></div>
         </div>
     </div>
     <!-- FOOTER -->
