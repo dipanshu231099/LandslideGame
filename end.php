@@ -41,7 +41,7 @@ if (!isset($_SESSION['uid'])) {
                     <h1>Congrats!</h1> <br>
                     <h3> You have completed the game successfully.</h3><br><br>
                     <br>
-                    <h3>Save this code for your reward</h3><br>
+                    <h3>Copy the code, and redeem this code to avail your reward for your participation</h3><br>
                     <?php
                     echo $_SESSION['uid'];
                     echo "<br>";
